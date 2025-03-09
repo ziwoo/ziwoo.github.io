@@ -2,26 +2,41 @@ document.addEventListener("DOMContentLoaded", function() {
   // 슬라이더 기능
   (function() {
     const slideTrack = document.querySelector('.slide-track');
-    const slides = document.querySelectorAll('.slide');
+    let slides = document.querySelectorAll('.slide');
     const slideWidth = 300; // 슬라이더 너비
-    const totalSlides = slides.length; // 복제된 슬라이드 포함
     let currentSlide = 0;
+  
+    // 첫 번째 슬라이드를 복제하여 마지막에 추가 (이미 복제된 경우 제외)
+    if (slides.length > 0 && !slides[slides.length - 1].classList.contains('clone')) {
+      const firstSlideClone = slides[0].cloneNode(true);
+      firstSlideClone.classList.add('clone');
+      slideTrack.appendChild(firstSlideClone);
+    }
+    
+    // 업데이트된 슬라이드 목록과 총 슬라이드 수
+    slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length; 
+  
+    // transitionend 이벤트를 사용하여 마지막(복제된) 슬라이드 도달 시 리셋
+    slideTrack.addEventListener('transitionend', function() {
+      if (currentSlide === totalSlides - 1) {
+        // transition 없이 초기 위치로 리셋
+        slideTrack.style.transition = 'none';
+        slideTrack.style.transform = `translateX(0)`;
+        currentSlide = 0;
+        // 강제 reflow 후 transition 복원
+        slideTrack.offsetWidth; 
+        slideTrack.style.transition = 'transform 0.5s ease-in-out';
+      }
+    });
     
     setInterval(() => {
       currentSlide++;
       slideTrack.style.transition = 'transform 0.5s ease-in-out';
       slideTrack.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-      
-      // 만약 복제된 슬라이드까지 이동했다면, transition 없이 초기 위치로 돌아가기
-      if (currentSlide === totalSlides - 1) {
-        setTimeout(() => {
-          slideTrack.style.transition = 'none';
-          slideTrack.style.transform = `translateX(0)`;
-          currentSlide = 0;
-        }, 500);
-      }
     }, 3000);
   })();
+  
 
   // 탭 활성화 (Intersection Observer)
   (function() {

@@ -38,6 +38,17 @@
   color: #007BFF;
 }
 
+@media (max-width: 768px) {
+  /* 사이드바 숨기기 */
+  .sidebar-wrapper {
+    display: none;
+  }
+  /* 또는, 사이드바를 상단 내비게이션으로 변경 */
+  .mobile-nav {
+    display: block;
+  }
+}
+
 /* 오른쪽 콘텐츠 영역 */
 .content {
   flex: 1;
