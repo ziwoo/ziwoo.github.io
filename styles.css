@@ -71,39 +71,30 @@ body {
   flex-wrap: wrap;
 }
 
-/* 슬라이더 영역 */
+/* 슬라이더 영역 (자바스크립트 슬라이더를 위한 기본 스타일) */
 .slider {
-  width: 300px;          /* 슬라이더 가로 영역 300px */
+  width: 300px;          /* 슬라이더 가로 영역을 300px로 제한 */
+  height: 200px;         /* 슬라이더 높이를 200px로 제한 */
   overflow: hidden;
   position: relative;
-  margin: 0 auto;        /* 중앙 정렬 */
+  margin: 0 auto;
 }
 
-/* 슬라이드 트랙: 4장의 슬라이드를 가로로 배치 */
-.slide-track {
-  display: flex;
-  width: 1200px;         /* 4 * 300px */
-  animation: scroll 10s linear infinite;
-}
-
-/* 각 슬라이드의 너비를 300px로 명시 */
+/* 모든 슬라이드는 절대 위치로 겹쳐 놓습니다 */
 .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 300px;
-  flex-shrink: 0;        /* 슬라이드 크기가 줄어들지 않도록 설정 */
+  height: 200px;
+  display: none;
 }
 
 .slide img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
-
-/* 슬라이더 애니메이션: 0에서 -900px로 이동 */
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-900px); }
-}
-
 
 /* Hero 텍스트 영역 */
 .hero-text {
@@ -116,7 +107,7 @@ body {
 .hero-text h1 {
   font-size: 48px;
   margin-bottom: 20px;
-  color: #fff; /* 텍스트 색상: 흰색 */
+  color: #fff;
 }
 
 .hero-text p {
