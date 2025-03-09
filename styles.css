@@ -77,6 +77,8 @@ body {
   max-width: 45%;
   overflow: hidden;
   position: relative;
+  /* 높이를 원하는 값으로 조정 */
+  max-height: 300px; /* 예시: 300px */
 }
 
 .slide-track {
@@ -91,7 +93,8 @@ body {
 
 .slide img {
   width: 100%;
-  display: block;
+  height: auto;
+  object-fit: cover; /* 필요에 따라 사용, 이미지의 비율 유지하며 영역에 맞게 채움 */
 }
 
 /* 슬라이더 애니메이션 */
