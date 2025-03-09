@@ -79,8 +79,11 @@ body {
 
 /* 슬라이더 영역 */
 .slider {
-  width: 300px;       /* 슬라이더 너비 */
-  height: 100%;       /* Hero 섹션 높이에 맞춤 (500px) */
+  display: flex;
+  align-items: center;    /* 수직 중앙 정렬 */
+  justify-content: center; /* 수평 중앙 정렬 (필요에 따라) */
+  width: 300px;
+  height: 100%;           /* Hero 섹션 높이(500px)에 맞춤 */
   overflow: hidden;
   position: relative;
   margin: 0 auto;
@@ -96,8 +99,8 @@ body {
 /* 각 슬라이드 */
 .slide {
   display: flex;
-  align-items: center;  /* 세로 중앙 정렬 */
-  justify-content: center;  /* 가로 중앙 정렬 (원하는 경우) */
+  align-items: center;   /* 세로 중앙 정렬 */
+  justify-content: center; /* 가로 중앙 정렬 (원하는 경우) */
   width: 300px;
   height: 100%;
   flex-shrink: 0;

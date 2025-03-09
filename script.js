@@ -10,3 +10,6 @@ document.addEventListener("DOMContentLoaded", function() {
     slideTrack.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
   }, 3000);
 });
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
