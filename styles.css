@@ -83,7 +83,7 @@ body {
    컨테이너 내에서 슬라이드가 움직이도록 합니다. */
 .slide-track {
   display: flex;
-  width: 400%;           /* 4장의 이미지라면 400%로 설정 */
+  width: 200%;           /* 2장의 이미지면 200%로 설정 */
   animation: scroll 10s linear infinite;
 }
 
@@ -97,12 +97,12 @@ body {
   object-fit: cover;
 }
 
-
 /* 슬라이더 애니메이션 */
 @keyframes scroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-75%); }
+  100% { transform: translateX(-50%); }
 }
+
 
 /* Hero 텍스트 영역 */
 .hero-text {
