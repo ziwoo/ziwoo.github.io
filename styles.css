@@ -15,7 +15,19 @@ body {
   line-height: 1.6;
   color: #333;
   background: #fff;
+  padding-top: 80px; /* 헤더 높이에 맞게 조정 */
+
 }
+
+:root {
+  --bg-color: #fff;
+  --text-color: #333;
+}
+body.dark-mode {
+  --bg-color: #333;
+  --text-color: #fff;
+}
+
 
 /* 컨테이너: 너비 조정 및 중앙 정렬 */
 .container {
@@ -26,6 +38,12 @@ body {
 
 /* 헤더 스타일 */
 .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* 다른 요소 위에 표시하기 위해 충분한 z-index 값 지정 */
+
   background: #f8f8f8;
   padding: 20px 0;
   border-bottom: 1px solid #ddd;
