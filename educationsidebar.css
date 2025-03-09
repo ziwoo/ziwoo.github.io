@@ -58,16 +58,18 @@
 /* Education, Award, Experience 등 공통 아이템 스타일 */
 .education-item,
 .award-item,
-.experience-item {
+.experience-item,
+.project-item {
   display: flex;
   align-items: flex-start;
   margin-bottom: 40px;
 }
 
-/* Education 아이콘, Award 아이콘, Experience 아이콘 */
+/* Education 아이콘, Award 아이콘, Experience 아이콘, Project 아이콘 */
 .education-icon,
 .award-icon,
-.experience-icon {
+.experience-icon,
+.project-icon {
   flex: 0 0 50px;
   font-size: 32px;
   color: #007BFF;
@@ -78,23 +80,24 @@
 }
 
 /* 날짜, 제목, 기타 설명 스타일 */
+/* Education, Award, Experience */
 .education-content .date,
 .award-content .date,
-.experience-item .date {
+.experience-content .date {
   font-size: 14px;
   color: #999;
 }
 
 .education-content h4,
 .award-content h4,
-.experience-item h4 {
+.experience-content h4 {
   margin: 5px 0;
   font-size: 24px;
 }
 
 .education-content .position,
 .award-content .position,
-.experience-item .position {
+.experience-content .position {
   font-size: 16px;
   color: #666;
   margin-bottom: 10px;
@@ -102,7 +105,29 @@
 
 .education-content p,
 .award-content p,
-.experience-item p {
+.experience-content p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Project 콘텐츠 스타일 */
+.project-content .date {
+  font-size: 14px;
+  color: #999;
+}
+
+.project-content h4 {
+  margin: 5px 0;
+  font-size: 24px;
+}
+
+.project-content .position {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.project-content p {
   font-size: 16px;
   line-height: 1.5;
 }
@@ -111,4 +136,5 @@
 .section-title {
   font-size: 28px;
   margin-bottom: 20px;
+  text-align: left;
 }
