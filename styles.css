@@ -105,6 +105,8 @@ body {
 }
 
 
+
+
 .slide img {
   display: block;
   width: 100%;
@@ -168,20 +170,41 @@ body {
 }
 
 /* Education 섹션 */
+
+
 .education-section {
   padding: 60px 0;
-  background: #f9f9f9;
-  text-align: center;
+  background: #fff;
 }
-
-.education-section h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
 .education-item {
-  margin-bottom: 20px;
+  display: flex;
+  margin-bottom: 40px;
+}
+.education-icon {
+  flex: 0 0 50px;
+  font-size: 32px;
+  color: #007BFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+.education-content .date {
+  font-size: 14px;
+  color: #999;
+}
+.education-content h3 {
+  margin: 5px 0;
+  font-size: 24px;
+}
+.education-content .position {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+.education-content p {
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 /* Projects 섹션 */

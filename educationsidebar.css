@@ -1,0 +1,114 @@
+/* 전체 컨테이너 레이아웃 */
+.resume-section {
+  display: flex;
+  gap: 40px;
+  padding: 60px 0;
+}
+
+/* 왼쪽 사이드바 */
+.sidebar {
+  position: static;
+  transition: top 0.5s ease;
+}
+
+.sidebar-wrapper {
+  flex: 0 0 200px;
+  position: relative;
+  margin-top: 100px; /* 헤더 높이만큼 여백 추가 */
+}
+
+.sidebar .nav {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar .nav li {
+  margin-bottom: 15px;
+}
+
+.sidebar .nav li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.sidebar .nav li a.active,
+.sidebar .nav li a:hover {
+  color: #007BFF;
+}
+
+/* 오른쪽 콘텐츠 영역 */
+.content {
+  flex: 1;
+}
+
+/* 탭 전환을 위해 기본적으로 섹션 숨김 */
+.section-content {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;  /* 구분선 위에 여백 추가 */
+  margin-bottom: 20px;   /* 아래 콘텐츠와의 간격 */
+}
+
+/* 활성화된 섹션 표시 */
+.section-content.active {
+  display: block;
+}
+
+/* Education, Award, Experience 등 공통 아이템 스타일 */
+.education-item,
+.award-item,
+.experience-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+/* Education 아이콘, Award 아이콘, Experience 아이콘 */
+.education-icon,
+.award-icon,
+.experience-icon {
+  flex: 0 0 50px;
+  font-size: 32px;
+  color: #007BFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+/* 날짜, 제목, 기타 설명 스타일 */
+.education-content .date,
+.award-content .date,
+.experience-item .date {
+  font-size: 14px;
+  color: #999;
+}
+
+.education-content h4,
+.award-content h4,
+.experience-item h4 {
+  margin: 5px 0;
+  font-size: 24px;
+}
+
+.education-content .position,
+.award-content .position,
+.experience-item .position {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.education-content p,
+.award-content p,
+.experience-item p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* 섹션 타이틀 */
+.section-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
