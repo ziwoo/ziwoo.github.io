@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ziwoo - Portfolio</title>
-  <!-- Google Fonts (원하는 글꼴로 변경 가능) -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- CSS 파일 링크 -->
   <link rel="stylesheet" href="styles.css">
@@ -12,7 +12,7 @@
 <body>
   <!-- 사이트 헤더 -->
   <header class="site-header">
-    <div class="container">
+    <div class="container header-container">
       <div class="logo">
         <a href="#home">Ziwoo</a>
       </div>
@@ -28,11 +28,22 @@
     </div>
   </header>
 
-  <!-- Home 섹션 (Hero) -->
+  <!-- Hero 섹션 -->
   <section id="home" class="hero-section">
-    <div class="container">
-      <h1>Ziwoo</h1>
-      <p>Hello! I am Ziwoo</p>
+    <div class="container hero-container">
+      <!-- 슬라이드 영역 -->
+      <div class="slider">
+        <div class="slide-track">
+          <div class="slide"><img src="images/img1.jpg" alt="Slide 1"></div>
+          <div class="slide"><img src="images/img2.jpg" alt="Slide 2"></div>
+          <div class="slide"><img src="images/img3.jpg" alt="Slide 3"></div>
+          <div class="slide"><img src="images/img4.jpg" alt="Slide 4"></div>
+        </div>
+      </div>
+      <!-- 텍스트 영역 -->
+      <div class="hero-text">
+        <h1>Hello! I am Ziwoo</h1>
+      </div>
     </div>
   </section>
 
@@ -49,7 +60,6 @@
         <li><strong>MBTI:</strong> INFP</li>
         <li><strong>Address:</strong> 경기도 남양주시</li>
         <li><strong>Email:</strong> <a href="mailto:ziwoo73@gmail.com">ziwoo73@gmail.com</a></li>
-        <!-- <li><strong>Phone:</strong> +82-10-0000-0000</li> -->
       </ul>
     </div>
   </section>
@@ -74,7 +84,6 @@
         <p>프로젝트 개요 및 주요 역할 설명</p>
         <a href="https://tistory.com" target="_blank" class="project-link">자세히 보기</a>
       </article>
-      <!-- 추가 프로젝트 항목 -->
     </div>
   </section>
 
@@ -84,20 +93,17 @@
       <h2>Contact</h2>
       <ul class="contact-details">
         <li><strong>Email:</strong> <a href="mailto:ziwoo73@gmail.com">ziwoo73@gmail.com</a></li>
-        <!-- <li><strong>Phone:</strong> +82-10-0000-0000</li> -->
-        <!-- <li><strong>Address:</strong> </li> -->
-        <!-- <li><strong>Instagram:</strong> <a href="https://www.instagram.com/" target="_blank">@jjj</a></li> -->
       </ul>
     </div>
   </section>
 
   <!-- 사이트 푸터 -->
-<footer class="site-footer">
-  <div class="container">
-    <p>&copy; Copyright © All rights reserved</p>
-    <p>Designed and Developed by Ziwoo</p>
-  </div>
-</footer>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; Copyright © All rights reserved</p>
+      <p>Designed and Developed by Ziwoo</p>
+    </div>
+  </footer>
 
   <!-- JavaScript 파일 링크 (필요시) -->
   <script src="script.js"></script>
