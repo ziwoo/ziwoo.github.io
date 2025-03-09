@@ -1,3 +1,8 @@
+/* HTML 부드러운 스크롤 */
+html {
+  scroll-behavior: smooth;
+}
+
 /* 기본 리셋 */
 * {
   margin: 0;
@@ -33,7 +38,7 @@ body {
 }
 
 .logo a {
-  font-size: 32px;
+  font-size: 32px; /* 홈 버튼 글씨 크기 증가 */
   font-weight: bold;
   color: #333;
   text-decoration: none;
@@ -98,7 +103,7 @@ body {
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;  /* 이미지 비율 유지하며 영역 채움 */
 }
 
 /* Hero 텍스트 영역 */
@@ -120,24 +125,16 @@ body {
   color: #fff;
 }
 
-/* 섹션 제목 스타일 */
-section h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-/* 섹션 제목 스타일 (이미 있음) */
-section h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
 /* About 섹션 */
 .about-section {
   padding: 60px 0;
-  background: #fff; /* 배경색 지정 */
+  background: #fff;
+}
+
+.about-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .about-section p {
@@ -159,7 +156,13 @@ section h2 {
 /* Education 섹션 */
 .education-section {
   padding: 60px 0;
-  background: #f9f9f9; /* 예시 배경색 */
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.education-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -170,12 +173,26 @@ section h2 {
 /* Projects 섹션 */
 .projects-section {
   padding: 60px 0;
-  background: #fff; /* 예시 배경색 */
+  background: #fff;
+  text-align: center;
+}
+
+.projects-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
 .project-item {
   margin-bottom: 40px;
+}
+
+.project-item h3 {
+  margin-bottom: 10px;
+}
+
+.project-item p {
+  margin-bottom: 10px;
 }
 
 .project-link {
@@ -196,27 +213,23 @@ section h2 {
   text-align: center;
 }
 
+.contact-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 .contact-details {
   list-style: none;
   margin: 0 auto;
-}
-
-/* 푸터 스타일 */
-.site-footer {
-  background: #333;  /* 푸터 배경색 */
-  color: #fff;
   text-align: center;
-  padding: 20px 0;
-  font-size: 14px;
 }
 
-.site-footer a {
-  color: #fff;
-  text-decoration: underline;
+.contact-details li {
+  margin-bottom: 10px;
 }
 
-
-/* 푸터 스타일 */
+/* Footer 스타일 */
 .site-footer {
   background: #333;
   color: #fff;
