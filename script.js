@@ -108,3 +108,22 @@ document.addEventListener("DOMContentLoaded", function() {
   
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const navList = document.querySelector('.site-nav ul');
+
+  // 메뉴 토글 버튼 클릭 시 active 클래스 토글
+  menuToggle.addEventListener('click', function(e) {
+    navList.classList.toggle('active');
+    // 이벤트 전파 중지: 버튼 클릭 이벤트가 문서 클릭 이벤트에 전달되지 않도록
+    e.stopPropagation();
+  });
+
+  // 문서 클릭 시, 메뉴가 열려있다면 active 클래스 제거
+  document.addEventListener('click', function(e) {
+    // 만약 클릭한 요소가 navList나 menuToggle 내부에 없다면
+    if (!navList.contains(e.target) && !menuToggle.contains(e.target)) {
+      navList.classList.remove('active');
+    }
+  });
+});
