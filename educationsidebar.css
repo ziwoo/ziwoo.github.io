@@ -39,13 +39,24 @@
 }
 
 @media (max-width: 768px) {
-  /* 사이드바 숨기기 */
-  .sidebar-wrapper {
-    display: none;
+  /* resume-section의 flex 방향을 column으로 변경 */
+  .resume-section {
+    flex-direction: column;
   }
-  /* 또는, 사이드바를 상단 내비게이션으로 변경 */
-  .mobile-nav {
-    display: block;
+  /* 사이드바 래퍼를 먼저 나오도록 order 설정 및 폭 100% */
+  .sidebar-wrapper {
+    order: -1; /* 콘텐츠보다 먼저 나오도록 */
+    width: 100%;
+    margin-top: 0; /* 필요 시 조정 */
+  }
+  /* 콘텐츠 영역도 폭 100% */
+  .content {
+    width: 100%;
+  }
+  /* 모바일에서는 fixed 포지션 제거 (원래 문서 흐름대로) */
+  .sidebar {
+    position: static;
+    top: auto;
   }
 }
 

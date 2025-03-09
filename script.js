@@ -69,17 +69,43 @@ document.addEventListener("DOMContentLoaded", function() {
   (function() {
     const sidebar = document.querySelector(".sidebar");
     const sidebarWrapper = document.querySelector(".sidebar-wrapper");
-    const initialOffset = sidebarWrapper.offsetTop;  // 사이드바 래퍼의 초기 위치
+    // sidebarWrapper의 초기 오프셋(문서 상단부터의 거리)
+    const initialOffset = sidebarWrapper.offsetTop;
+    // 스크롤이 initialOffset 이상일 때 적용할 top 값의 전환 범위 및 최종 값
+    const initialFixedTop = 200; // 임계 구간 시작시 고정될 top 값 (예: 200px)
+    const finalTop = 100;        // 스크롤이 충분히 내려가면 고정될 최종 top 값 (예: 100px)
+    const threshold = 200;       // initialOffset부터 추가 스크롤 범위(200px) 내에서 top이 선형 보간됨
     
     window.addEventListener("scroll", function() {
       const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      const viewportWidth = window.innerWidth;
       
-      if (scrollY >= initialOffset) {
-        sidebar.style.position = "fixed";
-        sidebar.style.top = "20px";
-      } else {
+      if (viewportWidth < 768) {
+        // 모바일 환경에서는 fixed 효과를 사용하지 않고 원래 문서 흐름대로
         sidebar.style.position = "static";
+        sidebar.style.top = "auto";
+      } else {
+        // 항상 fixed로 설정
+        sidebar.style.position = "fixed";
+        if (scrollY < initialOffset) {
+          // 스크롤이 초기 오프셋보다 작으면,
+          // fixed 상태이지만, top을 (initialOffset - scrollY)로 설정해서 원래 위치처럼 보이게 함
+          sidebar.style.top = (initialOffset - scrollY) + "px";
+        } else if (scrollY < initialOffset + threshold) {
+          // 스크롤이 initialOffset부터 threshold 구간 내에서는
+          // top 값을 선형 보간하여 자연스럽게 변화
+          const progress = (scrollY - initialOffset) / threshold;
+          const newTop = (1 - progress) * initialFixedTop + progress * finalTop;
+          sidebar.style.top = newTop + "px";
+        } else {
+          // 스크롤이 threshold를 넘으면 최종 top 값으로 고정
+          sidebar.style.top = finalTop + "px";
+        }
       }
     });
   })();
+  
+  
+  
+  
 });
