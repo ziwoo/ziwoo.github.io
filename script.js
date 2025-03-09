@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
   setInterval(() => {
     currentSlide = (currentSlide + 1) % totalSlides;
     slideTrack.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-  }, 3000);
+  }, 1500);
 });
 document.addEventListener('contextmenu', function(e) {
   e.preventDefault();

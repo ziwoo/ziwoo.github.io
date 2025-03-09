@@ -97,14 +97,12 @@ body {
 }
 
 /* 각 슬라이드 */
-.slider {
+.slide {
+  display: flex;
+  align-items: center;   /* 세로 중앙 정렬 */
   width: 300px;
-  height: 100%; /* Hero 섹션 높이에 맞춤 */
-  overflow: hidden;
-  margin: 0 auto;
-  position: relative;
-  display: flex; 
-  align-items: center; /* 세로 가운데 정렬 */
+  height: 100%;
+  flex-shrink: 0;
 }
 
 
