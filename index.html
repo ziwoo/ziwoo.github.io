@@ -4,80 +4,99 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ziwoo - Portfolio</title>
+  <!-- Google Fonts (원하는 글꼴로 변경 가능) -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- CSS 파일 링크 -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- 헤더 및 네비게이션 -->
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- 사이트 헤더 -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="#home">Ziwoo</a>
+      </div>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- Home 섹션 -->
-  <section id="home">
-    <h1>Ziwoo</h1>
-    <p>Hello! I am Ziwoo</p>
+  <!-- Home 섹션 (Hero) -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <h1>Ziwoo</h1>
+      <p>Hello! I am Ziwoo</p>
+    </div>
   </section>
 
   <!-- About 섹션 -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      이곳에 자기소개 및 간단한 소개글을 작성합니다.
-      예: "열정있게 도전하는 열정맨, 현재 Game,VR,AI에 관심을 가지고 있습니다."
-    </p>
-    <ul>
-      <li>Name: 정지우</li>
-      <li>MBTI: INFP</li>
-      <li>Address: 경기도 남양주시</li>
-      <li>Email: ziwoo73@gmail.com</li>
-      <!-- <li>Phone: +82-10-0000-0000</li> -->
-    </ul>
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        이곳에 자기소개 및 간단한 소개글을 작성합니다. <br>
+        예: "열정있게 도전하는 열정맨, 현재 Game, VR, AI에 관심을 가지고 있습니다."
+      </p>
+      <ul class="about-details">
+        <li><strong>Name:</strong> 정지우</li>
+        <li><strong>MBTI:</strong> INFP</li>
+        <li><strong>Address:</strong> 경기도 남양주시</li>
+        <li><strong>Email:</strong> <a href="mailto:ziwoo73@gmail.com">ziwoo73@gmail.com</a></li>
+        <!-- <li><strong>Phone:</strong> +82-10-0000-0000</li> -->
+      </ul>
+    </div>
   </section>
 
   <!-- Education 섹션 -->
-  <section id="education">
-    <h2>Education</h2>
-    <article>
-      <h3>CHUNGANG UNIVERSITY (CAU)</h3>
-      <p>영상공학 전공 (MS).</p>
-    </article>
+  <section id="education" class="education-section">
+    <div class="container">
+      <h2>Education</h2>
+      <article class="education-item">
+        <h3>CHUNGANG UNIVERSITY (CAU)</h3>
+        <p>영상공학 전공 (MS).</p>
+      </article>
+    </div>
   </section>
 
   <!-- Projects 섹션 -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <article>
-      <h3>World War Toons : Tank Arena</h3>
-      <p>프로젝트 개요 및 주요 역할 설명</p>
-      <a href="https://tistory.com" target="_blank">자세히 보기</a>
-    </article>
-    <!-- 추가 프로젝트들 -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <h2>Projects</h2>
+      <article class="project-item">
+        <h3>World War Toons : Tank Arena</h3>
+        <p>프로젝트 개요 및 주요 역할 설명</p>
+        <a href="https://tistory.com" target="_blank" class="project-link">자세히 보기</a>
+      </article>
+      <!-- 추가 프로젝트 항목 -->
+    </div>
   </section>
 
   <!-- Contact 섹션 -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <ul>
-      <li>Email: ziwoo73@gmail.com</li>
-      <!-- <li>Phone: +82-10-0000-0000</li> -->
-      <!--  <li>Address: </li> -->
-      <!--  <li>Instagram: <a href="https://www.instagram.com/" target="_blank">@jjj</a></li> -->
-    </ul>
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2>Contact</h2>
+      <ul class="contact-details">
+        <li><strong>Email:</strong> <a href="mailto:ziwoo73@gmail.com">ziwoo73@gmail.com</a></li>
+        <!-- <li><strong>Phone:</strong> +82-10-0000-0000</li> -->
+        <!-- <li><strong>Address:</strong> </li> -->
+        <!-- <li><strong>Instagram:</strong> <a href="https://www.instagram.com/" target="_blank">@jjj</a></li> -->
+      </ul>
+    </div>
   </section>
 
-  <!-- 푸터 -->
-  <footer>
-    <p>Copyright © All rights reserved</p>
-    <p>WordPress Theme by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+  <!-- 사이트 푸터 -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; Copyright © All rights reserved</p>
+      <p>WordPress Theme by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+    </div>
   </footer>
 
   <!-- JavaScript 파일 링크 (필요시) -->
