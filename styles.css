@@ -73,21 +73,23 @@ body {
 
 /* 슬라이더 영역 */
 .slider {
-  width: 300px;          /* 슬라이더 가로 영역을 300px로 제한 */
+  width: 300px;          /* 슬라이더 가로 영역 300px */
   overflow: hidden;
   position: relative;
-  margin: 0 auto;
+  margin: 0 auto;        /* 중앙 정렬 */
 }
 
-/* 슬라이드 트랙: 4개의 슬라이드 (이미지 1,2,1,2) */
+/* 슬라이드 트랙: 4장의 슬라이드를 가로로 배치 */
 .slide-track {
   display: flex;
-  width: 400%;           /* 4장의 이미지면 400%로 설정 */
+  width: 1200px;         /* 4 * 300px */
   animation: scroll 10s linear infinite;
 }
 
+/* 각 슬라이드의 너비를 300px로 명시 */
 .slide {
-  flex: 1 0 100%;
+  width: 300px;
+  flex-shrink: 0;        /* 슬라이드 크기가 줄어들지 않도록 설정 */
 }
 
 .slide img {
@@ -96,11 +98,12 @@ body {
   object-fit: cover;
 }
 
-/* 슬라이더 애니메이션 */
+/* 슬라이더 애니메이션: 0에서 -900px로 이동 */
 @keyframes scroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-75%); }
+  100% { transform: translateX(-900px); }
 }
+
 
 /* Hero 텍스트 영역 */
 .hero-text {
