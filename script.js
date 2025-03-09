@@ -1,15 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
+  const slideTrack = document.querySelector('.slide-track');
   const slides = document.querySelectorAll('.slide');
+  const slideWidth = 300; // 슬라이더 너비와 동일
+  const totalSlides = slides.length; // 4장
   let currentSlide = 0;
-
-  // 모든 슬라이드를 숨기고, 첫 번째 슬라이드를 표시
-  slides.forEach(slide => slide.style.display = 'none');
-  slides[currentSlide].style.display = 'block';
-
-  // 3초마다 슬라이드 전환
+  
   setInterval(() => {
-    slides[currentSlide].style.display = 'none';
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].style.display = 'block';
+    currentSlide = (currentSlide + 1) % totalSlides;
+    // 슬라이드 트랙을 현재 슬라이드에 맞게 좌측으로 이동
+    slideTrack.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
   }, 3000);
 });
