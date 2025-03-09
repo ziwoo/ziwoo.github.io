@@ -100,7 +100,6 @@ body {
 .slide {
   display: flex;
   align-items: center;   /* 세로 중앙 정렬 */
-  justify-content: flex-start; /* 가로 중앙 정렬 (원하는 경우) */
   width: 300px;
   height: 100%;
   flex-shrink: 0;
