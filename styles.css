@@ -26,8 +26,14 @@ body {
   border-bottom: 1px solid #ddd;
 }
 
-.site-header .logo a {
-  font-size: 24px;
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo a {
+  font-size: 32px; /* 홈 버튼 글씨 크기 증가 */
   font-weight: bold;
   color: #333;
   text-decoration: none;
@@ -37,7 +43,6 @@ body {
   list-style: none;
   display: flex;
   gap: 20px;
-  justify-content: flex-end;
 }
 
 .site-nav ul li a {
@@ -51,21 +56,67 @@ body {
   color: #007BFF;
 }
 
-/* Hero 섹션 (Home) */
+/* Hero 섹션 */
 .hero-section {
-  background: url('your-hero-image.jpg') center/cover no-repeat; /* 필요 시 배경 이미지 추가 */
+  background: #222; /* 어두운 배경 */
   padding: 100px 0;
-  text-align: center;
-  color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
-.hero-section h1 {
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* 슬라이더 영역 */
+.slider {
+  flex: 1 1 45%;
+  max-width: 45%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide-track {
+  display: flex;
+  width: 400%; /* 4장의 이미지 */
+  animation: scroll 20s linear infinite;
+}
+
+.slide {
+  flex: 1 0 100%;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+}
+
+/* 슬라이더 애니메이션 */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-75%); }
+}
+
+/* Hero 텍스트 영역 */
+.hero-text {
+  flex: 1 1 45%;
+  max-width: 45%;
+  text-align: left;
+  padding: 20px;
+}
+
+.hero-text h1 {
   font-size: 48px;
   margin-bottom: 20px;
+  color: #fff; /* 텍스트 흰색에서 어두운 색으로 변경 -> 필요에 따라 색상 조정 */
 }
 
-.hero-section p {
+.hero-text p {
   font-size: 20px;
+  color: #fff;
 }
 
 /* 섹션 제목 스타일 */
@@ -166,14 +217,25 @@ section h2 {
 
 /* 반응형 디자인 */
 @media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 10px;
+  }
   .site-nav ul {
     flex-direction: column;
     align-items: center;
   }
-  .hero-section h1 {
+  .hero-container {
+    flex-direction: column;
+  }
+  .slider, .hero-text {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+  .hero-text h1 {
     font-size: 36px;
   }
-  .hero-section p {
+  .hero-text p {
     font-size: 18px;
   }
 }
