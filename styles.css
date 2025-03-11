@@ -46,7 +46,7 @@ body.dark-mode {
   z-index: 1000; /* 다른 요소 위에 표시하기 위해 충분한 z-index 값 지정 */
 
   background: #f8f8f8;
-  padding: 20px 0;
+  padding: 10px 0;
   border-bottom: 1px solid #ddd;
 }
 
@@ -83,7 +83,7 @@ body.dark-mode {
 /* Hero 섹션 */
 .hero-section {
   background: #222;
-  height: 500px;  /* Hero 섹션 높이 */
+  height: 400px;  /* Hero 섹션 높이 */
   position: relative;
   overflow: hidden;
 }
@@ -124,7 +124,7 @@ body.dark-mode {
 .slider {
   display: flex;
   align-items: center;    /* 수직 중앙 정렬 */
-  width: 300px;
+  width: 250px;
   height: 100%;           /* Hero 섹션 높이(500px)에 맞춤 */
   overflow: hidden;
   position: relative;
@@ -152,8 +152,8 @@ body.dark-mode {
 
 .slide img {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   object-fit: cover;  /* 이미지 비율 유지하며 영역 채움 */
 }
  
@@ -216,7 +216,7 @@ body.dark-mode {
 
 
 .education-section {
-  padding: 60px 0;
+  padding: 10px 0;
   background: #fff;
 }
 .education-item {

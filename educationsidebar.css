@@ -38,27 +38,6 @@
   color: #007BFF;
 }
 
-@media (max-width: 768px) {
-  /* resume-section의 flex 방향을 column으로 변경 */
-  .resume-section {
-    flex-direction: column;
-  }
-  /* 사이드바 래퍼를 먼저 나오도록 order 설정 및 폭 100% */
-  .sidebar-wrapper {
-    order: -1; /* 콘텐츠보다 먼저 나오도록 */
-    width: 100%;
-    margin-top: 0; /* 필요 시 조정 */
-  }
-  /* 콘텐츠 영역도 폭 100% */
-  .content {
-    width: 100%;
-  }
-  /* 모바일에서는 fixed 포지션 제거 (원래 문서 흐름대로) */
-  .sidebar {
-    position: static;
-    top: auto;
-  }
-}
 
 /* 오른쪽 콘텐츠 영역 */
 .content {
@@ -88,7 +67,7 @@
 }
 
 /* Education 아이콘, Award 아이콘, Experience 아이콘, Project 아이콘 */
-.education-icon,
+/* .education-icon, */
 .award-icon,
 .experience-icon,
 .project-icon {
@@ -100,6 +79,39 @@
   justify-content: center;
   margin-right: 20px;
 }
+
+.education-item {
+  display: flex;
+  align-items: center; /* ✅ 아이콘과 텍스트 수직 정렬 */
+}
+
+.education-icon {
+  width: 100px; /* ✅ 너비 고정 */
+  height: 100px; /* ✅ 높이 고정 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* ✅ 내부 아이콘과 이미지 정렬을 위한 상대 위치 */
+  flex-shrink: 0; /* ✅ 부모 요소 크기 유지 (축소되지 않도록) */
+}
+
+.education-icon img {
+  width: 80px; /* ✅ 로고 크기 증가 */
+  height: auto; /* ✅ 원본 비율 유지 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.education-icon i {
+  font-size: 50px; /* ✅ 아이콘 크기 증가 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
 /* 날짜, 제목, 기타 설명 스타일 */
 /* Education, Award, Experience */
@@ -159,4 +171,32 @@
   font-size: 28px;
   margin-bottom: 20px;
   text-align: left;
+}
+
+
+
+@media (max-width: 768px) {
+  /* resume-section의 flex 방향을 column으로 변경 */
+  .resume-section {
+    flex-direction: column;
+  }
+  /* 사이드바 래퍼를 먼저 나오도록 order 설정 및 폭 100% */
+  .sidebar-wrapper {
+    order: -1; /* 콘텐츠보다 먼저 나오도록 */
+    width: 100%;
+    margin-top: 0; /* 필요 시 조정 */
+  }
+  /* 콘텐츠 영역도 폭 100% */
+  .content {
+    width: 100%;
+  }
+  /* 모바일에서는 fixed 포지션 제거 (원래 문서 흐름대로) */
+  .sidebar {
+    position: static;
+    top: auto;
+  }
+  .education-icon img {
+    width: 60px;  /* ✅ 모바일에서는 더 작은 크기로 조정 */
+    top: 15px;     /* ✅ 위치 조정 */
+  }
 }
