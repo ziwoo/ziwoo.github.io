@@ -1,40 +1,38 @@
 document.addEventListener("DOMContentLoaded", function() {
   // 슬라이더 기능
-  (function() {
-    const slideTrack = document.querySelector('.slide-track');
-    let slides = document.querySelectorAll('.slide');
-    const slideWidth = 300; // 슬라이더 너비
+  (function () {
+    const slideTrack = document.querySelector(".slide-track");
+    let slides = document.querySelectorAll(".slide");
+    const slideWidth = slides[0].offsetWidth; // 슬라이드 너비 자동 감지
     let currentSlide = 0;
-  
-    // 첫 번째 슬라이드를 복제하여 마지막에 추가 (이미 복제된 경우 제외)
-    if (slides.length > 0 && !slides[slides.length - 1].classList.contains('clone')) {
+
+    // 첫 번째 슬라이드를 복제하여 마지막에 추가
+    if (slides.length > 0 && !slides[slides.length - 1].classList.contains("clone")) {
       const firstSlideClone = slides[0].cloneNode(true);
-      firstSlideClone.classList.add('clone');
+      firstSlideClone.classList.add("clone");
       slideTrack.appendChild(firstSlideClone);
     }
-    
-    // 업데이트된 슬라이드 목록과 총 슬라이드 수
-    slides = document.querySelectorAll('.slide');
-    const totalSlides = slides.length; 
-  
-    // transitionend 이벤트를 사용하여 마지막(복제된) 슬라이드 도달 시 리셋
-    slideTrack.addEventListener('transitionend', function() {
-      if (currentSlide === totalSlides - 1) {
-        // transition 없이 초기 위치로 리셋
-        slideTrack.style.transition = 'none';
-        slideTrack.style.transform = `translateX(0)`;
-        currentSlide = 0;
-        // 강제 reflow 후 transition 복원
-        slideTrack.offsetWidth; 
-        slideTrack.style.transition = 'transform 0.5s ease-in-out';
-      }
-    });
-    
-    setInterval(() => {
+
+    slides = document.querySelectorAll(".slide"); // 슬라이드 목록 업데이트
+    const totalSlides = slides.length;
+
+    function moveSlide() {
       currentSlide++;
-      slideTrack.style.transition = 'transform 0.5s ease-in-out';
+      slideTrack.style.transition = "transform 0.5s ease-in-out";
       slideTrack.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-    }, 3000);
+
+      // 마지막 슬라이드 도달 시 리셋 (setTimeout으로 transition 끝난 후 리셋)
+      if (currentSlide === totalSlides - 1) {
+        setTimeout(() => {
+          slideTrack.style.transition = "none"; // transition 제거
+          slideTrack.style.transform = "translateX(0)"; // 첫 번째 슬라이드 위치로 이동
+          currentSlide = 0;
+        }, 500); // transition 시간과 동일하게 설정 (0.5s)
+      }
+    }
+
+    // 3초마다 슬라이드 이동
+    setInterval(moveSlide, 3000);
   })();
   
 
