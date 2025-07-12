@@ -83,9 +83,11 @@ body.dark-mode {
 /* Hero 섹션 */
 .hero-section {
   background: #222;
-  height: 400px;  /* Hero 섹션 높이 */
+  min-height: 400px;  /* 최소 높이로 변경 */
+  height: auto;       /* 자동 높이 조정 */
   position: relative;
   overflow: hidden;
+  padding: 40px 0;    /* 상하 패딩 추가 */
 }
 
 .hero-container {
@@ -93,7 +95,8 @@ body.dark-mode {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  height: 100%;
+  min-height: 320px;  /* 최소 높이 설정 */
+  gap: 20px;          /* 요소 간 간격 추가 */
 }
 
 .hero-wrap {
@@ -124,8 +127,9 @@ body.dark-mode {
 .slider {
   display: flex;
   align-items: center;    /* 수직 중앙 정렬 */
-  width: 250px;
-  height: 100%;           /* Hero 섹션 높이(500px)에 맞춤 */
+  width: clamp(200px, 25vw, 250px); /* 반응형 너비 */
+  min-height: 200px;      /* 최소 높이 설정 */
+  max-height: 300px;      /* 최대 높이 제한 */
   overflow: hidden;
   position: relative;
   margin: 0 auto;
@@ -169,19 +173,24 @@ body.dark-mode {
   justify-content: center;
   text-align: left; /* 필요하면 center로 변경 가능 */
   /* 만약 창이 작아져도 최소 높이를 유지하고 싶다면: */
-  min-height: 300px;
+  min-height: 200px;
+  word-wrap: break-word; /* 긴 텍스트 줄바꿈 */
+  overflow-wrap: break-word; /* 모던 브라우저 지원 */
 }
 
 
 .hero-text h1 {
-  font-size: 48px;
+  font-size: clamp(24px, 5vw, 48px); /* 반응형 폰트 크기 */
   margin-bottom: 20px;
   color: #fff;
+  line-height: 1.2; /* 줄 간격 조정 */
+  word-break: keep-all; /* 한글 단어 단위 줄바꿈 */
 }
 
 .hero-text p {
-  font-size: 20px;
+  font-size: clamp(16px, 3vw, 20px); /* 반응형 폰트 크기 */
   color: #fff;
+  line-height: 1.4;
 }
 
 /* About 섹션 */
@@ -340,6 +349,7 @@ body.dark-mode {
     align-items: center; /* 수직 중앙 정렬 추가 */
     justify-content: space-between; /* 좌우 정렬 */
   }
+  
   .site-nav ul {
     display: none;
     flex-direction: column;
@@ -352,49 +362,94 @@ body.dark-mode {
     padding: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
+  
   .hero-container {
     flex-direction: column;
+    gap: 30px; /* 요소 간 간격 증가 */
+    padding: 20px 0; /* 상하 패딩 추가 */
   }
+  
   .slider, .hero-text {
     max-width: 100%;
     text-align: center;
   }
-  .hero-text h1 {
-    font-size: 36px;
+  
+  .hero-text {
+    min-height: auto; /* 모바일에서는 최소 높이 제거 */
+    padding: 10px;
   }
+  
+  .hero-text h1 {
+    font-size: clamp(28px, 8vw, 36px); /* 더 작은 화면에서도 적절한 크기 */
+    margin-bottom: 15px;
+  }
+  
   .hero-text p {
-    font-size: 18px;
+    font-size: clamp(14px, 4vw, 18px);
   }
 
   .hero-wrap h1 {
     font-size: 28px; /* 모바일에 맞게 폰트 크기 조정 */
   }
+  
   .hero-wrap h2 {
     font-size: 20px;
-  }
-
-  .site-nav ul {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    background: #fff;
-    position: absolute;
-    top: 60px; /* 헤더 높이에 맞춰 조정 */
-    right: 0;
-    width: 200px; /* 필요에 따라 조정 */
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   
   /* 햄버거 버튼 보이기 */
   .menu-toggle {
     margin-left: auto; /* 버튼을 오른쪽으로 밀어냅니다 */
-
     display: block;
   }
   
   /* 메뉴 활성화 상태 */
   .site-nav ul.active {
     display: flex;
+  }
+}
+
+/* 더 작은 화면을 위한 추가 반응형 */
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: 350px;
+    padding: 20px 0;
+  }
+  
+  .hero-container {
+    gap: 20px;
+    padding: 15px 0;
+  }
+  
+  .hero-text h1 {
+    font-size: clamp(24px, 10vw, 32px);
+    line-height: 1.1;
+  }
+  
+  .hero-text p {
+    font-size: clamp(12px, 5vw, 16px);
+  }
+  
+  .slider {
+    width: clamp(150px, 60vw, 200px);
+    min-height: 150px;
+  }
+  
+  .container {
+    width: 95%; /* 더 작은 화면에서는 여백 줄임 */
+  }
+}
+
+/* 태블릿 화면을 위한 반응형 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-text h1 {
+    font-size: clamp(32px, 4vw, 42px);
+  }
+  
+  .hero-text p {
+    font-size: clamp(16px, 2vw, 18px);
+  }
+  
+  .slider {
+    width: clamp(220px, 20vw, 250px);
   }
 }

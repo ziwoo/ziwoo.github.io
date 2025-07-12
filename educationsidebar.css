@@ -179,24 +179,123 @@
   /* resume-section의 flex 방향을 column으로 변경 */
   .resume-section {
     flex-direction: column;
+    gap: 20px;
+    padding: 30px 0;
   }
+  
   /* 사이드바 래퍼를 먼저 나오도록 order 설정 및 폭 100% */
   .sidebar-wrapper {
     order: -1; /* 콘텐츠보다 먼저 나오도록 */
     width: 100%;
     margin-top: 0; /* 필요 시 조정 */
   }
+  
   /* 콘텐츠 영역도 폭 100% */
   .content {
     width: 100%;
   }
+  
   /* 모바일에서는 fixed 포지션 제거 (원래 문서 흐름대로) */
   .sidebar {
     position: static;
     top: auto;
   }
+  
   .education-icon img {
     width: 60px;  /* ✅ 모바일에서는 더 작은 크기로 조정 */
     top: 15px;     /* ✅ 위치 조정 */
+  }
+  
+  /* 모바일에서 텍스트 크기 조정 */
+  .education-content h4,
+  .award-content h4,
+  .experience-content h4,
+  .project-content h4 {
+    font-size: clamp(18px, 5vw, 24px);
+  }
+  
+  .education-content p,
+  .award-content p,
+  .experience-content p,
+  .project-content p {
+    font-size: clamp(14px, 4vw, 16px);
+  }
+  
+  .section-title {
+    font-size: clamp(22px, 6vw, 28px);
+  }
+  
+  /* 모바일에서 아이템 간격 조정 */
+  .education-item,
+  .award-item,
+  .experience-item,
+  .project-item {
+    margin-bottom: 30px;
+  }
+}
+
+/* 더 작은 화면을 위한 추가 반응형 */
+@media (max-width: 480px) {
+  .resume-section {
+    padding: 20px 0;
+    gap: 15px;
+  }
+  
+  .education-icon {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .education-icon img {
+    width: 50px;
+  }
+  
+  .education-icon i {
+    font-size: 40px;
+  }
+  
+  .award-icon,
+  .experience-icon,
+  .project-icon {
+    flex: 0 0 40px;
+    font-size: 28px;
+    margin-right: 15px;
+  }
+  
+  .education-content h4,
+  .award-content h4,
+  .experience-content h4,
+  .project-content h4 {
+    font-size: clamp(16px, 6vw, 20px);
+  }
+  
+  .education-content p,
+  .award-content p,
+  .experience-content p,
+  .project-content p {
+    font-size: clamp(12px, 4vw, 14px);
+  }
+  
+  .section-title {
+    font-size: clamp(20px, 7vw, 24px);
+  }
+}
+
+/* 태블릿 화면을 위한 반응형 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .resume-section {
+    gap: 30px;
+    padding: 40px 0;
+  }
+  
+  .sidebar-wrapper {
+    flex: 0 0 180px;
+  }
+  
+  .education-content h4,
+  .award-content h4,
+  .experience-content h4,
+  .project-content h4 {
+    font-size: clamp(20px, 3vw, 24px);
   }
 }
