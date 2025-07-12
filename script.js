@@ -1,38 +1,76 @@
 document.addEventListener("DOMContentLoaded", function() {
   // 슬라이더 기능
   (function () {
+    const slider = document.querySelector(".slider");
     const slideTrack = document.querySelector(".slide-track");
     let slides = document.querySelectorAll(".slide");
-    const slideWidth = slides[0].offsetWidth; // 슬라이드 너비 자동 감지
     let currentSlide = 0;
+    let slideWidth;
+    let intervalId;
 
-    // 첫 번째 슬라이드를 복제하여 마지막에 추가
-    if (slides.length > 0 && !slides[slides.length - 1].classList.contains("clone")) {
-      const firstSlideClone = slides[0].cloneNode(true);
-      firstSlideClone.classList.add("clone");
-      slideTrack.appendChild(firstSlideClone);
+    // 슬라이드 너비 계산 함수
+    function updateSlideWidth() {
+      slideWidth = slider.offsetWidth;
+      
+      // 모든 슬라이드의 너비를 현재 슬라이더 너비로 업데이트
+      slides.forEach(slide => {
+        slide.style.width = `${slideWidth}px`;
+      });
+      
+      // 현재 위치 재설정
+      slideTrack.style.transform = `translateX(-${(currentSlide + 1) * slideWidth}px)`;
     }
 
-    slides = document.querySelectorAll(".slide"); // 슬라이드 목록 업데이트
-    const totalSlides = slides.length;
+    // 첫 번째와 마지막 슬라이드 복제
+    const firstSlideClone = slides[0].cloneNode(true);
+    const lastSlideClone = slides[slides.length - 1].cloneNode(true);
+    
+    // 복제된 슬라이드에 클래스 추가
+    firstSlideClone.classList.add("clone");
+    lastSlideClone.classList.add("clone");
+    
+    // 복제된 슬라이드 추가
+    slideTrack.appendChild(firstSlideClone);
+    slideTrack.insertBefore(lastSlideClone, slides[0]);
+
+    // 슬라이드 목록 업데이트
+    slides = document.querySelectorAll(".slide");
+    
+    // 초기 너비 설정
+    updateSlideWidth();
 
     function moveSlide() {
       currentSlide++;
       slideTrack.style.transition = "transform 0.5s ease-in-out";
-      slideTrack.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+      slideTrack.style.transform = `translateX(-${(currentSlide + 1) * slideWidth}px)`;
 
-      // 마지막 슬라이드 도달 시 리셋 (setTimeout으로 transition 끝난 후 리셋)
-      if (currentSlide === totalSlides - 1) {
+      // 마지막 슬라이드(복제본)에 도달했을 때
+      if (currentSlide === slides.length - 2) {
         setTimeout(() => {
-          slideTrack.style.transition = "none"; // transition 제거
-          slideTrack.style.transform = "translateX(0)"; // 첫 번째 슬라이드 위치로 이동
+          slideTrack.style.transition = "none";
           currentSlide = 0;
-        }, 500); // transition 시간과 동일하게 설정 (0.5s)
+          slideTrack.style.transform = `translateX(-${slideWidth}px)`;
+        }, 500);
       }
     }
 
-    // 3초마다 슬라이드 이동
-    setInterval(moveSlide, 3000);
+    // 기존 인터벌 제거 후 새로 설정
+    function resetInterval() {
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+      intervalId = setInterval(moveSlide, 3000);
+    }
+
+    // 초기 인터벌 설정
+    resetInterval();
+
+    // 화면 크기 변경 감지
+    window.addEventListener('resize', () => {
+      slideTrack.style.transition = "none";
+      updateSlideWidth();
+      resetInterval();
+    });
   })();
   
 
@@ -125,3 +163,4 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+
