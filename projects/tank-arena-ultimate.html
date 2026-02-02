@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tank Arena: Ultimate League - Project Detail</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f8f9fa;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #6c757d;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-bottom: 30px;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #5a6268;
+    }
+
+    .project-header {
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+
+    .project-header h1 {
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meta-label {
+      font-size: 12px;
+      color: #999;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .meta-value {
+      font-size: 16px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .project-section {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .project-section h2 {
+      font-size: 24px;
+      color: #007BFF;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #007BFF;
+    }
+
+    .project-section p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .project-section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .project-section ul li {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 10px;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .project-section ul li:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #007BFF;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px 15px;
+      }
+
+      .project-header {
+        padding: 25px 20px;
+      }
+
+      .project-header h1 {
+        font-size: 28px;
+      }
+
+      .project-section {
+        padding: 20px 25px;
+      }
+
+      .project-section h2 {
+        font-size: 20px;
+      }
+
+      .project-meta {
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="javascript:window.close();" class="back-btn">← 닫기</a>
+    
+    <div class="project-header">
+      <h1>Tank Arena: Ultimate League</h1>
+      <div class="project-meta">
+        <div class="meta-item">
+          <span class="meta-label">기간</span>
+          <span class="meta-value">2023-05-22 ~ 2024-03-11</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">플랫폼</span>
+          <span class="meta-value">Meta Quest VR</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">엔진</span>
+          <span class="meta-value">Unity Engine</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <h2>프로젝트 개요</h2>
+      <p>유니티 엔진을 활용해 개발된 탱크 전투 게임으로, Meta 스토어에 출시된 VR 액션 게임입니다. 이전 프로젝트의 경험을 바탕으로 더욱 개선된 게임 시스템과 사용자 경험을 제공합니다.</p>
+    </div>
+
+    <div class="project-section">
+      <h2>담당 역할</h2>
+      <ul>
+        <li>게임 로비 시스템 설계 및 구현</li>
+        <li>유저 프로필 시스템 개발</li>
+        <li>매칭 시스템 구현 및 최적화</li>
+        <li>아웃게임 전반의 기능 개발 및 관리</li>
+        <li>사용자 UI/UX 개선 작업 진행</li>
+        <li>Meta Quest 플랫폼 최적화</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h2>주요 성과</h2>
+      <ul>
+        <li>이전 프로젝트 경험을 토대로 게임 구조를 더욱 효율적으로 개선</li>
+        <li>Meta와의 협업 경험을 통한 플랫폼 이해도 향상</li>
+        <li>안정적인 매칭 시스템 구축으로 원활한 멀티플레이 환경 제공</li>
+        <li>사용자 피드백을 반영한 UI/UX 개선으로 만족도 증대</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
+

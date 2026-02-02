@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spectral Scream - Project Detail</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f8f9fa;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #6c757d;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-bottom: 30px;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #5a6268;
+    }
+
+    .project-header {
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+
+    .project-header h1 {
+      font-size: 36px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meta-label {
+      font-size: 12px;
+      color: #999;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .meta-value {
+      font-size: 16px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .project-section {
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .project-section h2 {
+      font-size: 24px;
+      color: #007BFF;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #007BFF;
+    }
+
+    .project-section p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .project-section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .project-section ul li {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 10px;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .project-section ul li:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #007BFF;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px 15px;
+      }
+
+      .project-header {
+        padding: 25px 20px;
+      }
+
+      .project-header h1 {
+        font-size: 28px;
+      }
+
+      .project-section {
+        padding: 20px 25px;
+      }
+
+      .project-section h2 {
+        font-size: 20px;
+      }
+
+      .project-meta {
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="javascript:window.close();" class="back-btn">← 닫기</a>
+    
+    <div class="project-header">
+      <h1>Spectral Scream</h1>
+      <div class="project-meta">
+        <div class="meta-item">
+          <span class="meta-label">기간</span>
+          <span class="meta-value">2024-01-20 ~ 2024-10-31</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">플랫폼</span>
+          <span class="meta-value">Steam PC & VR Cross-Platform</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">엔진</span>
+          <span class="meta-value">Unity Engine</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-section">
+      <h2>프로젝트 개요</h2>
+      <p>공포 장르의 VR/PC 크로스 플랫폼 게임으로, Steam에서 출시된 멀티플레이 공포 게임입니다. PC와 VR 플레이어가 함께 플레이할 수 있는 독특한 크로스플랫폼 경험을 제공합니다.</p>
+    </div>
+
+    <div class="project-section">
+      <h2>담당 역할</h2>
+      <ul>
+        <li>VR 상호작용 시스템 구현 (Controller, Room-Scale 등)</li>
+        <li>로비 시스템 및 아웃게임 시스템 개발</li>
+        <li>PC와 VR 간 크로스플랫폼 호환성 테스트 및 최적화</li>
+        <li>사용자 인터페이스 및 UX 개선</li>
+        <li>멀티플레이 네트워크 기능 구현 및 디버깅</li>
+      </ul>
+    </div>
+
+    <div class="project-section">
+      <h2>주요 성과</h2>
+      <ul>
+        <li>PC와 VR 환경을 모두 지원하는 유연한 게임 구조 확립</li>
+        <li>Steam 플랫폼 출시 후 긍정적인 유저 피드백 확보</li>
+        <li>크로스플랫폼 멀티플레이 경험을 통한 기술적 노하우 축적</li>
+        <li>VR 특화 인터랙션 시스템 개발로 몰입감 있는 게임플레이 제공</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
+
