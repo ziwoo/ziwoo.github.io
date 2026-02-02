@@ -66,6 +66,20 @@
   margin-bottom: 40px;
 }
 
+/* 프로젝트 아이템 호버 효과 */
+.project-item {
+  padding: 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.project-item:hover {
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
 /* Education 아이콘, Award 아이콘, Experience 아이콘, Project 아이콘 */
 /* .education-icon, */
 .award-icon,
@@ -153,6 +167,12 @@
 .project-content h4 {
   margin: 5px 0;
   font-size: 24px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.project-item:hover .project-content h4 {
+  color: #007BFF;
 }
 
 .project-content .position {
@@ -164,6 +184,27 @@
 .project-content p {
   font-size: 16px;
   line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* 자세히 보기 버튼 스타일 */
+.project-detail-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  background-color: #6c757d;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.project-detail-btn:hover {
+  background-color: #5a6268;
+  transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(108, 117, 125, 0.3);
 }
 
 /* 섹션 타이틀 */
@@ -231,6 +272,13 @@
   .experience-item,
   .project-item {
     margin-bottom: 30px;
+    padding: 15px;
+  }
+  
+  /* 모바일에서 버튼 스타일 조정 */
+  .project-detail-btn {
+    padding: 8px 18px;
+    font-size: 13px;
   }
 }
 
