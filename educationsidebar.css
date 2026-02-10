@@ -33,9 +33,18 @@
   transition: color 0.3s;
 }
 
+body.dark-mode .sidebar .nav li a {
+  color: #e0e0e0;
+}
+
 .sidebar .nav li a.active,
 .sidebar .nav li a:hover {
   color: #007BFF;
+}
+
+body.dark-mode .sidebar .nav li a.active,
+body.dark-mode .sidebar .nav li a:hover {
+  color: #4da6ff;
 }
 
 
@@ -49,6 +58,11 @@
   border-bottom: 1px solid #ddd;
   padding-bottom: 20px;  /* 구분선 위에 여백 추가 */
   margin-bottom: 20px;   /* 아래 콘텐츠와의 간격 */
+  transition: border-color 0.3s ease;
+}
+
+body.dark-mode .section-content {
+  border-bottom: 1px solid #444;
 }
 
 /* 활성화된 섹션 표시 */
@@ -80,6 +94,11 @@
   transform: translateY(-2px);
 }
 
+body.dark-mode .project-item:hover {
+  background-color: #2a2a2a;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
 /* Education 아이콘, Award 아이콘, Experience 아이콘, Project 아이콘 */
 /* .education-icon, */
 .award-icon,
@@ -92,6 +111,13 @@
   align-items: center;
   justify-content: center;
   margin-right: 20px;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .award-icon,
+body.dark-mode .experience-icon,
+body.dark-mode .project-icon {
+  color: #4da6ff;
 }
 
 .education-item {
@@ -141,6 +167,13 @@
 .experience-content h4 {
   margin: 5px 0;
   font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .education-content h4,
+body.dark-mode .award-content h4,
+body.dark-mode .experience-content h4 {
+  color: #e0e0e0;
 }
 
 .education-content .position,
@@ -149,6 +182,13 @@
   font-size: 16px;
   color: #666;
   margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .education-content .position,
+body.dark-mode .award-content .position,
+body.dark-mode .experience-content .position {
+  color: #999;
 }
 
 .education-content p,
@@ -171,14 +211,26 @@
   transition: color 0.3s ease;
 }
 
+body.dark-mode .project-content h4 {
+  color: #e0e0e0;
+}
+
 .project-item:hover .project-content h4 {
   color: #007BFF;
+}
+
+body.dark-mode .project-item:hover .project-content h4 {
+  color: #4da6ff;
 }
 
 .project-content .position {
   font-size: 16px;
   color: #666;
   margin-bottom: 10px;
+}
+
+body.dark-mode .project-content .position {
+  color: #999;
 }
 
 .project-content p {
@@ -198,6 +250,14 @@
   background-color: #f8f9fa;
   border-left: 3px solid #007BFF;
   border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .project-tech,
+body.dark-mode .project-achievements {
+  color: #b0b0b0;
+  background-color: #2a2a2a;
+  border-left: 3px solid #4da6ff;
 }
 
 .project-tech strong,
@@ -205,6 +265,11 @@
   color: #333;
   font-weight: 600;
   margin-right: 8px;
+}
+
+body.dark-mode .project-tech strong,
+body.dark-mode .project-achievements strong {
+  color: #e0e0e0;
 }
 
 /* 자세히 보기 버튼 스타일 */
@@ -221,10 +286,20 @@
   margin-top: 10px;
 }
 
+body.dark-mode .project-detail-btn {
+  background-color: #4da6ff;
+  color: #1a1a1a;
+}
+
 .project-detail-btn:hover {
   background-color: #5a6268;
   transform: translateX(5px);
   box-shadow: 0 2px 8px rgba(108, 117, 125, 0.3);
+}
+
+body.dark-mode .project-detail-btn:hover {
+  background-color: #66b3ff;
+  box-shadow: 0 2px 8px rgba(77, 166, 255, 0.3);
 }
 
 /* 섹션 타이틀 */
@@ -246,6 +321,12 @@
   margin-bottom: 12px;
   padding-bottom: 8px;
   border-bottom: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .skills-category-title {
+  color: #e0e0e0;
+  border-bottom: 1px solid #444;
 }
 
 .skills-tags {
@@ -266,6 +347,12 @@
   transition: all 0.3s ease;
 }
 
+body.dark-mode .skill-tag {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: 1px solid #444;
+}
+
 .skill-tag:hover {
   background-color: #e9ecef;
   border-color: #007BFF;
@@ -273,11 +360,21 @@
   box-shadow: 0 2px 6px rgba(0, 123, 255, 0.15);
 }
 
+body.dark-mode .skill-tag:hover {
+  background-color: #3a3a3a;
+  border-color: #4da6ff;
+  box-shadow: 0 2px 6px rgba(77, 166, 255, 0.15);
+}
+
 .skill-note {
   font-size: 12px;
   color: #6c757d;
   font-weight: 400;
   font-style: italic;
+}
+
+body.dark-mode .skill-note {
+  color: #999;
 }
 
 
