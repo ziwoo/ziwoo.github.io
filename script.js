@@ -162,5 +162,36 @@ document.addEventListener("DOMContentLoaded", function() {
       navList.classList.remove('active');
     }
   });
+
+  // 테마 토글 기능
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeIcon = themeToggle.querySelector('i');
+  
+  // 로컬 스토리지에서 저장된 테마 불러오기
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    themeIcon.classList.remove('fa-sun');
+    themeIcon.classList.add('fa-moon');
+  }
+
+  // 테마 토글 버튼 클릭 이벤트
+  themeToggle.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    document.body.classList.toggle('dark-mode');
+    
+    // 아이콘 변경
+    if (document.body.classList.contains('dark-mode')) {
+      themeIcon.classList.remove('fa-sun');
+      themeIcon.classList.add('fa-moon');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      themeIcon.classList.remove('fa-moon');
+      themeIcon.classList.add('fa-sun');
+      localStorage.setItem('theme', 'light');
+    }
+  });
 });
 
